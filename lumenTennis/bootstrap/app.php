@@ -23,6 +23,8 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
+
+
 // $app->withFacades();
 
 // $app->withEloquent();
@@ -61,6 +63,7 @@ $app->singleton(
 
 $app->configure('app');
 
+
 /*
 |--------------------------------------------------------------------------
 | Register Middleware
@@ -71,6 +74,10 @@ $app->configure('app');
 | route or middleware that'll be assigned to some specific routes.
 |
 */
+
+$app->middleware([
+    App\Http\Middleware\CorsMiddleware::class
+ ]);
 
 // $app->middleware([
 //     App\Http\Middleware\ExampleMiddleware::class
